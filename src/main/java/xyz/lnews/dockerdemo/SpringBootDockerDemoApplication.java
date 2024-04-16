@@ -17,6 +17,12 @@ public class SpringBootDockerDemoApplication {
 
     @GetMapping("/hello")
     public String getHello(){
-        return "hello!";
+        return causeNullPointerException();
+    }
+
+    private String causeNullPointerException() {
+        String nullString = null;
+        // The following line will throw a NullPointerException because nullString is null
+        return nullString.toUpperCase();
     }
 }
